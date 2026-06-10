@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imran Hossain Imon — Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="scienceCanvas"></canvas>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">{</span> IHI <span class="logo-bracket">}</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Available for Research Collaboration</div>
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Imran Hossain<br><span class="hero-name-accent">Imon</span></h1>
+      <div class="typed-wrapper">
+        <span class="typed-prefix">&gt; </span>
+        <span id="typedText" class="typed-text"></span>
+        <span class="typed-cursor">|</span>
+      </div>
+
+      <!-- AI Chat Widget -->
+      <div class="chat-widget">
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-msg bot">
+            <div class="chat-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M12 2a4 4 0 014 4v1a4 4 0 01-8 0V6a4 4 0 014-4zM4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div class="chat-bubble" id="initialBubble">
+              <span class="chat-typing" id="initialTyping">
+                <span></span><span></span><span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions">
+          <button class="chat-chip" data-q="Tell me about your skills and projects.">Projects</button>
+          <button class="chat-chip" data-q="What is your educational background?">Education</button>
+          <button class="chat-chip" data-q="What work experience do you have?">Experience</button>
+          <button class="chat-chip" data-q="What are your research interests?">Research</button>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" class="chat-input" id="chatInput" placeholder="Ask anything about Imran..." autocomplete="off">
+          <button class="chat-send" id="chatSend" aria-label="Send">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Research Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="1">0</span><span class="stat-suffix">yr</span>
+          <span class="stat-label">Industry Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="250">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Students Mentored</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="about-lead">
+            I'm a software engineer turned AI researcher, driven by a curiosity for how
+            intelligent systems can solve real-world problems responsibly.
+          </p>
+          <p>
+            I'm a researcher and AI engineer working at the intersection of language model safety, multilingual NLP, and AI for digital health. I'm completing a <strong>Master of Information Technology (Artificial Intelligence)</strong> at Macquarie University, Sydney, building on a Computer Science background and industry experience as a software engineer at BRAC Bank PLC.
+          </p>
+          <p>
+            My recent work includes <strong>MMOR-Bench</strong>, a multilingual benchmark I am developing to evaluate safety alignment and over-refusal across frontier LLMs and seven languages — revealing how safety-aligned models systematically disadvantage low-resource language speakers. Alongside this, I'm building a research agenda around culturally grounded <strong>AI safety</strong> for mental health support in diverse populations. I believe responsible AI demands evaluation frameworks that reflect the full breadth of human language and lived experience.
+          </p>
+        </div>
+        <div class="about-cards reveal">
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h4>Research Focus</h4>
+              <p>LLM Safety, AI Ethics, Digital Health</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <h4>Based In</h4>
+              <p>Sydney, Australia</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div>
+              <h4>Interests</h4>
+              <p>LLM Safety, AI Ethics, Digital Health</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <h4>Community</h4>
+              <p>MARS Society, Peer Mentor, Teaching Assistant</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">Experience</h2>
+      </div>
+      <div class="experience-timeline">
+
+        <div class="exp-item reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3>Software Developer, Card Systems</h3>
+                <p class="exp-company">BRAC Bank PLC &middot; Technology Division</p>
+              </div>
+              <span class="exp-date">Jan 2024 &mdash; Jun 2024</span>
+            </div>
+            <ul class="exp-list">
+              <li>Developed a machine learning-driven simulator and gateway to automate card transaction data flow</li>
+              <li>Maintained core card system applications and resolved payment failure issues in real-time</li>
+              <li>Designed and deployed a QR-based feedback collection system for branch and ATM services</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Python</span><span>ML</span><span>SQL</span><span>Card Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3>Intern, Core Banking System</h3>
+                <p class="exp-company">BRAC Bank PLC &middot; Technology Division</p>
+              </div>
+              <span class="exp-date">Jun 2023 &mdash; Sep 2023</span>
+            </div>
+            <ul class="exp-list">
+              <li>Built a prototype AI-powered card fraud detection system</li>
+              <li>Supported core banking system and infrastructure maintenance</li>
+              <li>Gained hands-on experience with Linux systems, virtual machines, and data center operations</li>
+            </ul>
+            <div class="exp-tags">
+              <span>AI/ML</span><span>Linux</span><span>Banking</span><span>Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <h3>Teaching Assistant</h3>
+                <p class="exp-company">BRAC University &middot; School of Data and Sciences</p>
+              </div>
+              <span class="exp-date">Jan 2022 &mdash; Dec 2022</span>
+            </div>
+            <ul class="exp-list">
+              <li>Conducted tutorials for Differential Calculus &amp; Coordinate Geometry (MAT110) for 250+ students</li>
+              <li>Evaluated assignments with personalized feedback across Spring, Summer, and Fall semesters</li>
+              <li>Prepared lecture materials in coordination with faculty to support student learning</li>
+            </ul>
+            <div class="exp-tags">
+              <span>Teaching</span><span>Mathematics</span><span>Mentoring</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card featured reveal">
+          <div class="project-label">Featured &middot; Computer Vision</div>
+          <h3 class="project-title">Fine-Grained Beverage Can Classification</h3>
+          <p class="project-description">
+            Deep learning pipeline for classifying visually similar beverage can variants
+            with applications in automated retail, smart vending, and inventory systems.
+          </p>
+          <ul class="project-details">
+            <li>Compared MobileNetV2 and ResNet50 with transfer learning and multi-phase fine-tuning</li>
+            <li>Designed ablation studies across 4 configurations per backbone (8 total experiments)</li>
+            <li>Achieved <strong>100% test accuracy</strong> (ResNet50) and <strong>98.1%</strong> (MobileNetV2)</li>
+            <li>Solved near-identical Rockstar Zero Sugar variant classification</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span><span>TensorFlow</span><span>Keras</span><span>Transfer Learning</span><span>PIL</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-label">IoT &middot; Smart Cities</div>
+          <h3 class="project-title">Smart Waste Management System for Smart Cities</h3>
+          <p class="project-description">
+            A fully automated IoT-based smart waste management system to improve urban sustainability
+            by optimizing garbage collection and reducing health and environmental hazards.
+          </p>
+          <ul class="project-details">
+            <li>Engineered architecture with ultrasonic sensors and GSM modules for real-time fill-level detection</li>
+            <li>Achieved <strong>91% bin fill detection</strong> and <strong>89% waste disposal tracking</strong> accuracy</li>
+            <li>SMS-based alerts with GPS location integration for collection agents</li>
+            <li>Roadmap for automated dump stations, waste categorization, and circular economy integration</li>
+          </ul>
+          <div class="project-tech">
+            <span>IoT</span><span>Sensors</span><span>Embedded Systems</span><span>GSM</span><span>GPS</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-label">AI &middot; FinTech</div>
+          <h3 class="project-title">FraudPredict: AI-Powered Card Fraud Detection</h3>
+          <p class="project-description">
+            AI-driven system for detecting fraudulent card transactions using ML and deep learning,
+            analyzing spatial, temporal, and behavioral patterns.
+          </p>
+          <ul class="project-details">
+            <li>Analyzed customer transaction data to identify anomalies on recent activity</li>
+            <li>Implemented real-time fraud flagging based on adaptive behavior modeling</li>
+            <li>Built with Django backend and SQL database for production-grade deployment</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span><span>Django</span><span>SQL</span><span>ML/DL</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-label">Neuroscience &middot; Deep Learning</div>
+          <h3 class="project-title">Emotion Detection from EEG Signals</h3>
+          <p class="project-description">
+            Classifying emotional states from EEG brainwave data using convolutional and
+            graph convolutional neural networks.
+          </p>
+          <ul class="project-details">
+            <li>Built CNN and GCN models for 4-class emotion classification (boredom, calm, horror, excitement)</li>
+            <li>Applied FFT, Welch's method, and Hjorth parameters for feature extraction</li>
+            <li>Achieved <strong>90% average classification accuracy</strong> on DREAMER and GAMEMO datasets</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span><span>TensorFlow</span><span>CNN</span><span>GCN</span><span>EEG</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-label">Robotics &middot; Space</div>
+          <h3 class="project-title">BRACU Mongol-Tori Mars Rover</h3>
+          <p class="project-description">
+            Next-generation Mars rover prototype with autonomous navigation, obstacle avoidance,
+            and robust wireless communication under simulated Martian conditions.
+          </p>
+          <ul class="project-details">
+            <li>Developed autonomous navigation algorithms and real-time control systems</li>
+            <li>Designed low-latency wireless communication protocols for rover-base station link</li>
+            <li>2nd Runner-up at University Rover Challenge 2020 among 36 international teams</li>
+          </ul>
+          <div class="project-tech">
+            <span>Java</span><span>Python</span><span>Robotics</span><span>Wireless Comm</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="section section-alt" id="research">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Research Interests</h2>
+      </div>
+
+      <!-- Ongoing Research: MMOR -->
+      <div class="research-featured reveal">
+        <div class="research-featured-label">COMP8851: Major Project &middot; Macquarie University</div>
+        <h3>MMOR-Bench: Multilingual, Multitask Benchmark for Evaluating Over-Refusal &amp; Safety Alignment in LLMs</h3>
+        <p class="research-featured-meta">NLP &middot; LLM Safety &middot; Multilingual AI &middot; 2024 &mdash; Present</p>
+        <p>
+          A large-scale multilingual evaluation framework for LLM safety, measuring over-refusal and harmful compliance
+          across multiple languages with a complete pipeline from dataset translation through multitask classification.
+        </p>
+        <div class="research-stats">
+          <div class="research-stat">
+            <span class="research-stat-number">17,500</span>
+            <span class="research-stat-label"> Over-Refusal Datasets</span>
+          </div>
+          <div class="research-stat">
+            <span class="research-stat-number">6</span>
+            <span class="research-stat-label">Large Language Models</span>
+          </div>
+          <div class="research-stat">
+            <span class="research-stat-number">5</span>
+            <span class="research-stat-label">Multitask Datasets</span>
+          </div>
+        </div>
+        <ul class="project-details">
+          <li>Integrated AdvBench, HarmBench, OR-Bench, MedSafetyBench, CatQA, and Do-Not-Answer datasets</li>
+          <li>Developed multilingual dataset translation and preparation pipelines</li>
+          <li>Implemented response and query classification for overrefusal detection</li>
+          <li>Built automated evaluation pipelines and cross-lingual annotation workflows</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>NLP</span><span>LLM Evaluation</span><span>Jupyter</span><span>Multilingual AI</span>
+        </div>
+      </div>
+
+      <!-- Ongoing Research: Sepsis -->
+      <div class="research-featured reveal">
+        <div class="research-featured-label">Ongoing Research</div>
+        <h3>Trustworthy LLM-Based Clinical Decision Support for 12-Hour Early Sepsis Risk Prediction</h3>
+        <p class="research-featured-meta">Clinical AI &middot; Trustworthy ML &middot; Digital Health &middot; 2026</p>
+        <p>
+          A governance-aligned framework integrating evidence grounding, calibrated uncertainty, selective abstention,
+          and audit mechanisms for safe LLM-enhanced sepsis prediction in ICU settings using MIMIC-IV data.
+        </p>
+        <div class="research-stats">
+          <div class="research-stat">
+            <span class="research-stat-number">4</span>
+            <span class="research-stat-label">Research Questions</span>
+          </div>
+          <div class="research-stat">
+            <span class="research-stat-number">4</span>
+            <span class="research-stat-label">Trustworthiness Layers</span>
+          </div>
+        </div>
+        <ul class="project-details">
+          <li>LightGBM + GRU-D predictive backbone with calibrated 12-hour risk probabilities</li>
+          <li>RAG-based explanation layer grounding outputs in sepsis guidelines and clinical literature</li>
+          <li>Uncertainty calibration via temperature scaling with selective abstention policies</li>
+          <li>Governance-oriented audit logging for clinical accountability and oversight</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>PyTorch</span><span>LightGBM</span><span>RAG</span><span>MIMIC-IV</span>
+        </div>
+      </div>
+
+      <!-- Ongoing Research: SafeMind -->
+      <div class="research-featured reveal">
+        <div class="research-featured-label">Ongoing Research</div>
+        <h3>SafeMind: Evaluating and Improving Safety Alignment in Generative AI for Mental Health</h3>
+        <p class="research-featured-meta">AI Safety &middot; Digital Mental Health &middot; Co-Design &middot; 2026</p>
+        <p>
+          A co-designed, multilingual benchmark and alignment framework for evaluating LLM safety in mental health contexts,
+          addressing over-refusal, harmful compliance, and equity gaps across CALD communities in Australia.
+        </p>
+        <div class="research-stats">
+          <div class="research-stat">
+            <span class="research-stat-number">6</span>
+            <span class="research-stat-label">Languages Evaluated</span>
+          </div>
+          <div class="research-stat">
+            <span class="research-stat-number">8</span>
+            <span class="research-stat-label">Crisis Categories</span>
+          </div>
+        </div>
+        <ul class="project-details">
+          <li>Co-design workshops with clinicians, lived-experience consumers, and CALD communities</li>
+          <li>SafeMind benchmark: multilingual evaluation across crisis categories and prompting modes</li>
+          <li>Alignment via RAG and Direct Preference Optimization (DPO) on open-weight LLMs</li>
+          <li>Cross-lingual equity analysis for safety alignment across Arabic, Mandarin, Vietnamese, Hindi, Bengali</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>LLMs</span><span>RAG</span><span>DPO</span><span>Co-Design</span><span>Multilingual NLP</span>
+        </div>
+      </div>
+
+      <!-- Research Interest Cards -->
+      <div class="research-grid">
+        <div class="research-card reveal">
+          <div class="research-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+            </svg>
+          </div>
+          <h3>AI Safety &amp; Alignment</h3>
+          <p>Over-refusal patterns in LLMs, multilingual safety benchmarks, and responsible deployment of generative AI systems.</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <h3>Trustworthy Clinical AI</h3>
+          <p>Evidence grounding, uncertainty calibration, and governance frameworks for high-stakes healthcare decision support.</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+              <circle cx="12" cy="12" r="3"/><path d="M12 1v4m0 14v4M4.22 4.22l2.83 2.83m9.9 9.9l2.83 2.83M1 12h4m14 0h4M4.22 19.78l2.83-2.83m9.9-9.9l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3>Computer Vision</h3>
+          <p>Fine-grained classification, transfer learning, and domain adaptation for real-world visual recognition.</p>
+        </div>
+        <div class="research-card reveal">
+          <div class="research-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Digital Health &amp; HCI</h3>
+          <p>Co-designed AI interventions, digital mental health tools, and equitable access for culturally diverse populations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <h3>Frameworks &amp; Libraries</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">Keras</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">NLTK</span>
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <h3>Platforms &amp; Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+            <h3>Developer Environment</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Anaconda</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">Streamlit</span>
+            <span class="skill-tag">Google Colab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Education</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-card-accent"></div>
+          <div class="edu-card-body">
+            <div class="edu-top">
+              <div>
+                <h3>Master of Information Technology</h3>
+                <p class="edu-specialization">Specialization in Artificial Intelligence</p>
+                <p class="edu-institution">Macquarie University, Sydney, Australia</p>
+              </div>
+              <div class="edu-badge">
+                <span class="edu-score">WAM 74</span>
+                <span class="edu-score-label">/ 100</span>
+              </div>
+            </div>
+            <span class="edu-date">July 2024 &mdash; Present</span>
+            <p class="edu-details">Faculty of Science and Engineering. Coursework includes Advanced Computer Vision &amp; Action (COMP8430), Advanced NLP, and Data Science. Active member of MARS (Macquarie Aerospace Rover Society).</p>
+          </div>
+        </div>
+        <div class="edu-card reveal">
+          <div class="edu-card-accent"></div>
+          <div class="edu-card-body">
+            <div class="edu-top">
+              <div>
+                <h3>B.Sc. in Computer Science & Engineering &amp; Engineering</h3>
+                <p class="edu-institution">BRAC University, Bangladesh</p>
+              </div>
+              <div class="edu-badge">
+                <span class="edu-score">CGPA 3.6</span>
+                <span class="edu-score-label">/ 4.0</span>
+              </div>
+            </div>
+            <span class="edu-date">January 2019 &mdash; March 2023</span>
+            <p class="edu-details">Relevant coursework: Data Structures, Algorithms Analysis, Software Engineering, Computer Architecture, Database Management, System Design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">07</span>
+        <h2 class="section-title">Honours &amp; Awards</h2>
+      </div>
+      <div class="awards-grid">
+        <div class="award-card reveal">
+          <div class="award-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+              <circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+            </svg>
+          </div>
+          <div class="award-content">
+            <span class="award-year">2020</span>
+            <h3>2nd Runner-up &mdash; University Rover Challenge</h3>
+            <p>Achieved 2nd Runner-up among 36 international teams at the world's premier Mars rover competition. Team also placed 4th globally in URC 2021.</p>
+          </div>
+        </div>
+        <div class="award-card reveal">
+          <div class="award-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="award-content">
+            <span class="award-year">2021</span>
+            <h3>Top 5 Finalist &mdash; Kibo Robot Programming Challenge</h3>
+            <p>Secured 5th position internationally. Programmed the Astrobee robot aboard the ISS simulation for autonomous navigation and object recognition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section class="section section-alt" id="leadership">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">08</span>
+        <h2 class="section-title">Leadership &amp; Community</h2>
+      </div>
+      <div class="leadership-grid">
+        <div class="leadership-card reveal">
+          <h3>Macquarie Aerospace Rover Society (MARS)</h3>
+          <p class="leadership-role">Member, Software &middot; July 2024 &mdash; June 2025</p>
+          <p>Contributing to autonomous navigation, telemetry processing, and mission control software for Mars rover prototypes. Collaborating with multidisciplinary teams across mechanical, electrical, and systems engineering.</p>
+        </div>
+        <div class="leadership-card reveal">
+          <h3>FYAT Peer Mentor</h3>
+          <p class="leadership-role">Office of Academic Advising, BRAC University &middot; Oct 2021 &mdash; Apr 2023</p>
+          <p>Mentored 200+ first-year students through their transition to university life. Facilitated orientation programs and served as a primary point of contact for academic and extracurricular guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">09</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+      <div class="contact-content">
+        <p class="contact-intro">
+          I'm always open to discussing research collaborations, new opportunities,
+          or interesting projects. Whether it's AI research, software engineering,
+          or anything in between &mdash; let's connect.
+        </p>
+        <div class="contact-grid">
+          <a href="mailto:hossainimran.imzz@gmail.com" class="contact-card reveal">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">hossainimran.imzz@gmail.com</span>
+            </div>
+          </a>
+          <a href="https://github.com/this-is-imon" target="_blank" rel="noopener" class="contact-card reveal">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">this-is-imon</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/this-is-imon" target="_blank" rel="noopener" class="contact-card reveal">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">this-is-imon</span>
+            </div>
+          </a>
+          <a href="tel:+61478780484" class="contact-card reveal">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">Available on request</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Imran Hossain Imon. Built with purpose.</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
